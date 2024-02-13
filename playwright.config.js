@@ -29,7 +29,7 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     actionTimeout: 0,
-    trace: 'on-first-retry',
+    trace: 'on-all-retries',
     screenshot: 'on',
     video: 'retain-on-failure',
     headless: true,
