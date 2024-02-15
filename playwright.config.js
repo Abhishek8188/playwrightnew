@@ -33,7 +33,7 @@ module.exports = defineConfig({
     trace: 'on-all-retries',
     screenshot: 'on',
     video: 'retain-on-failure',
-    headless: true,
+    headless: false,
   },
 
   /* Configure projects for major browsers */
