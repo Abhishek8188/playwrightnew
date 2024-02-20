@@ -1,8 +1,10 @@
 import { test, expect } from '@playwright/test';
-import {loadHomepage, assertTitle} from '../tests//pages/functions';
+import { FunctionsPage } from './pages/functions';
 
 
 test('assertion in heading', async ({ page }) => {
-await loadHomepage(page)
-await assertTitle(page)
+    const functionsPage = new FunctionsPage(page)
+
+    await functionsPage.loadHomepage(page)
+    await functionsPage.assertTitle(page)
 });

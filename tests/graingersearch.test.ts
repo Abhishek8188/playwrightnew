@@ -1,8 +1,11 @@
 import { test, expect } from '@playwright/test';
-import {loadHomepage, assertTitle, loadGraingerWebsite, searchWithProduct, verifyPDPpage} from '../tests//pages/functions';
+import { FunctionsPage } from '../tests/pages/functions'
 
 test('assertion in heading', async ({ page }) => {
-await loadGraingerWebsite(page)
-await searchWithProduct(page)
-await verifyPDPpage(page)
+
+    const functionsPage = new FunctionsPage(page)
+
+    await functionsPage.loadGraingerWebsite(page)
+    await functionsPage.searchWithProduct(page)
+    await functionsPage.verifyPDPpage(page)
 });
