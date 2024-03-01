@@ -12,8 +12,20 @@ export class FunctionsPage {
     async loadHomepage(page: Page) {
         await page.goto('https:/www.example.com')
     }
+
     async loadGraingerWebsite(page: Page) {
         await page.goto('https://agi-hylt.gcom.grainger.com/en')
+    }
+
+    async scrolldownTothepageandclickOnPumps(page: Page) {
+        await page.mouse.move(31, 212);
+        await page.mouse.down();
+        await page.mouse.move(31, 276)
+        await page.mouse.up()
+        await page.waitForTimeout(5000)
+        await page.locator('(//div[@class="gca-grid-homepage"]/div[text()="Pumps"])[3]').click()
+        await page.waitForTimeout(5000)
+
     }
 
     async loadGrowApp(page: Page) {

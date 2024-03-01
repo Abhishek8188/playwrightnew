@@ -3,15 +3,22 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "tests:firefox": "playwright test --config=playwright.config.ts --project=Firefox",
+    "tests:API": "playwright test --config=api.config.ts --project=Chromium",
+    "env:test": "cross-env test_env= test npx playwright test",
+    "env:prod": "cross-env test_env= prod npx playwright test"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.40.0",
-    "@types/node": "^20.9.4"
+    "@types/node": "^20.9.4",
+    "cross-env": "^7.0.3"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "playwright": "^1.40.0"
   }
 }

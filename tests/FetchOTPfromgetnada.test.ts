@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { FunctionsPage } from '../tests/pages/functions'
 
 
-test.only('assertion in heading', async ({ page }) => {
+test('assertion in heading', async ({ page }) => {
     const functionsPage = new FunctionsPage(page)
 
     const newpage = await functionsPage.loadGrowApp(page)
