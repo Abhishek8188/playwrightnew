@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import globalSetup from './utils/globalSetup';
 
 dotenv.config({
-  path: `../tests/env/.env.${process.env.ENV}`,
+  path: `.env.${process.env.ENV}`,
 });
 
 /**
@@ -41,7 +41,7 @@ module.exports = defineConfig({
     video: 'retain-on-failure',
     headless: false,
   },
-  globalSetup: "utils\globalSetup.ts",
+  globalSetup: "./utils/globalSetup",
   /* Configure projects for major browsers */
   projects: [
     {

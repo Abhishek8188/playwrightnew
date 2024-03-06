@@ -6,8 +6,8 @@
   "scripts": {
     "tests:firefox": "playwright test --config=playwright.config.ts --project=Firefox",
     "tests:API": "playwright test --config=api.config.ts --project=Chromium",
-    "env:test": "cross-env test_env= test npx playwright test",
-    "env:prod": "cross-env test_env= prod npx playwright test"
+    "env:test": "cross-env test_env=test npx playwright test",
+    "env:prod": "cross-env test_env=prod npx playwright test"
   },
   "keywords": [],
   "author": "",

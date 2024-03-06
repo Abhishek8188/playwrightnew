@@ -3,11 +3,14 @@ import { test, expect } from '@playwright/test'
 test.describe.parallel('API Testing', () => {
     const baseUrl = 'https://reqres.in/api'
 
-    test('Simple API Test - Assert Response Status', async ({ request }) => {
+    test('Simple API Test - Assert Response Status and validating the value in response', async ({ request }) => {
         const response = await request.get(`${baseUrl}/users/3`)
         expect(response.status()).toBe(200)
 
         const requestbody = JSON.parse(await response.text())
+        const first_name = requestbody.data.first_name
+        console.log(first_name)
+        expect(first_name).toBeDefined()
         console.group(requestbody)
     })
 
